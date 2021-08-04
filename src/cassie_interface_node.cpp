@@ -37,10 +37,10 @@
 #include <cassie_interface/cassie_user_in_t.h>
 
 // ROS includes
+#include <cassie_description/cassie_model.hpp>
 #include <ros/ros.h>
 #include <ros_utilities/timing.hpp>
 #include <control_eigen_utilities/limits.hpp>
-#include <cassie_description/cassie_model.hpp>
 #include <cassie_estimation/heelspring_solver.hpp>
 #include <cassie_estimation/contact_classifier.hpp>
 #include <cassie_estimation/contact_ekf.hpp>
@@ -438,7 +438,7 @@ int main(int argc, char *argv[])
                 }
 
                 // Do simulation
-                if (ros::Time::now().toSec() > 10.0) {
+                if (ros::Time::now().toSec() > 0) {
                     // Crouch simulation
                     // cassie_out.pelvis.radio.channel[SH] = -1.0;
 
