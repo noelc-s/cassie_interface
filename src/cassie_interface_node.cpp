@@ -438,7 +438,7 @@ int main(int argc, char *argv[])
                 }
 
                 // Do simulation
-                if (ros::Time::now().toSec() > 0) {
+                if (ros::Time::now().toSec() > 3.5) {
                     // Crouch simulation
                     // cassie_out.pelvis.radio.channel[SH] = -1.0;
 

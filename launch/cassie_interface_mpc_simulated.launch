@@ -50,7 +50,8 @@
                 prior_forward_kinematics_std: 0.003
                 prior_contact_yaw_std: 0.03
         locomotion_control:
-            dt: 0.001
+            dt_stand: 0.001
+            dt_walk: 0.001
             standing:
                 use_qp: true
                 use_lateral_comp: true
@@ -105,6 +106,13 @@
                     w_hol_mz: 6
                     w_Vdot: 3.2
             stepping:
+                MPC:
+                    N: 2
+                    dt_MPC: 0.001
+                    terminal_scaling: 1
+                    pos_scaling: 0
+                    vel_scaling: 0
+                    input_scaling: 1
                 use_qp: true
                 nDomain: 2
                 time_scale: 1.0
@@ -118,7 +126,7 @@
                 right_stance_gravity_scale: 1
                 u_stancetoe_offset: 0
                 stoppable_velocity_threshold: 0.2
-                use_contact_switching: false
+                use_contact_switching: falseos::spinOnce();
                 velocity_integrator_bleed_constant: 0.99999
                 kp: '[1600, 1000, 600, 600, 600, 600, 600, 600, 30]'
                 kd: '[25, 20, 10, 14, 14, 8, 8, 10, 2]'

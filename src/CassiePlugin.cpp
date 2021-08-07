@@ -356,10 +356,10 @@ void CassiePlugin::onUpdate()
 
     // Detatch pelvis after receiving data
     // Slowly lower and detach robot for easy initialization
-    const double LOWER_TIME = 5.0;
-    const double HOLD_TIME  = 7.4;
-    const double DETACH_TIME = 9.0;
-    const double DAMPER_TIME = 12.0;
+    const double LOWER_TIME = 0.;
+    const double HOLD_TIME  = 2.;
+    const double DETACH_TIME = 2.5;
+    const double DAMPER_TIME = 3.5;
     if (static_joint_attached) {
         if (((currentTime - firstPacketTime_).Double() > LOWER_TIME) && ((currentTime - firstPacketTime_).Double() < HOLD_TIME)) {
             // Lower pelvis x seconds after receiving data
