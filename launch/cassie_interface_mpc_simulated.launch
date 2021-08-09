@@ -110,9 +110,9 @@
                     N: 2
                     dt_MPC: 0.001
                     terminal_scaling: 1
-                    pos_scaling: 0
+                    pos_scaling: 1
                     vel_scaling: 0
-                    input_scaling: 1
+                    input_scaling: .01
                 use_qp: true
                 nDomain: 2
                 time_scale: 1.0
@@ -189,6 +189,14 @@
                     w_hol_mz: 1
                     w_hol_fixed: 1
                     w_Vdot: 1.4
+        mpc:
+            gaitlib: 'package://cassie_controllers/gaits/20200927.yaml'
+            N: 2
+            dt_MPC: 0.05
+            terminal_scaling: 1
+            pos_scaling: 0
+            vel_scaling: 0
+            input_scaling: 1
 </rosparam>
 
 <node name="cassie_interface_node" pkg="cassie_interface" type="cassie_interface_node" args="" respawn="false" />
